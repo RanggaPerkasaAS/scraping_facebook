@@ -17,7 +17,7 @@ link = "https://www.facebook.com"
 
 driver.get(link)
 
-# target username and password
+# targeting email dan username
 username = driver.find_element(By.CSS_SELECTOR, "input[name='email']")
 password = driver.find_element(By.CSS_SELECTOR, "input[name='pass']")
 
@@ -27,7 +27,7 @@ username.send_keys("ranggaperkasa822@yahoo.com")
 password.clear()
 password.send_keys("jendela2")
 
-# click login
+# login
 driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
 time.sleep(5)
 
@@ -43,13 +43,13 @@ for timer in range(0,20):
 
 data_group = []
 
-# Ambil HTML dari halaman grup
+# get HTML dari halaman grup
 html = driver.page_source
 soup = BeautifulSoup(html, "html.parser")
-# Proses HTML untuk mendapatkan konten yang diinginkan
+
 all_posts = soup.find_all("div", class_="x1yztbdb x1n2onr6 xh8yej3 x1ja2u2z")
 
-# Log jumlah postingan yang ditemukan
+# log jumlah postingan yang ditemukan
 print(f"Found {len(all_posts)} posts.")
 
 for post in all_posts:
@@ -63,7 +63,7 @@ for post in all_posts:
             'nama' : name,
             'content' : content,
         }) 
-# Tutup browser
+
 driver.quit()
 
 print(data_group)
