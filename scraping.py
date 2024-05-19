@@ -23,9 +23,9 @@ password = driver.find_element(By.CSS_SELECTOR, "input[name='pass']")
 
 # enter email and password
 username.clear()
-username.send_keys("ranggaperkasa822@yahoo.com")
+username.send_keys("email anda")
 password.clear()
-password.send_keys("jendela2")
+password.send_keys("password anda")
 
 # login
 driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
